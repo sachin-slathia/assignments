@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>Currencies with rates according to Indian Rupee</comment>
+    <entry key="USD">0.015</entry>
+    <entry key="usd">0.015</entry>
+    <entry key="E">0.012</entry>
+    <entry key="YEN">1.60</entry>
+    <entry key="UKP">0.011</entry>
+    <entry key="PESO">.28</entry>
+    <entry key="e">0.012</entry>
+    <entry key="yen">1.60</entry>
+    <entry key="ukp">0.011</entry>
+    <entry key="peso">.28</entry>
+</properties>
