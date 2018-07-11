@@ -4,19 +4,22 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 import java.util.Scanner;
 
 public class CurrencyConverter {
     static Scanner scan = new Scanner(System.in);
 
-    private static void convertor(String to, String from, int amount) {
+    private static void convertor(String to, String from, int amount) throws Exception {
+
         try {
-            File file = new File("./src/main/resources/CurrencyInformation/information.xml");
-            FileInputStream fileExtract = new FileInputStream(file);
+
+            InputStream inputStream = CurrencyConverter.class.getClass()
+                    .getResourceAsStream("/currencyinformation/information.xml");
             Properties property = new Properties();
-            property.loadFromXML(fileExtract);
-            fileExtract.close();
+            property.loadFromXML(inputStream);
+            inputStream.close();
             Double result;
             if (from.equalsIgnoreCase("inr")) {
                 result = Double.parseDouble(property.getProperty(to));
@@ -37,7 +40,7 @@ public class CurrencyConverter {
 
     }
 
-    public static void main(String[] var0) {
+    public static void main(String[] var0) throws Exception {
         System.out.println("Available Currencies INR,USD,E,UKP,YEN,PESO");
         System.out.println("To");
         String to= scan.next();
